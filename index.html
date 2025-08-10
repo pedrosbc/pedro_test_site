@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Somador de Números</title>
   <style>
     body {
@@ -12,6 +13,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      padding: 1rem;
     }
 
     .container {
@@ -20,7 +22,8 @@
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
-      width: 300px;
+      width: 100%;
+      max-width: 350px;
     }
 
     h1 {
@@ -31,16 +34,17 @@
 
     input {
       width: 100%;
-      padding: 0.6rem;
+      padding: 0.8rem;
       margin: 0.5rem 0;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
+      box-sizing: border-box;
     }
 
     button {
       width: 100%;
-      padding: 0.7rem;
+      padding: 0.9rem;
       margin-top: 1rem;
       background-color: #007bff;
       border: none;
@@ -69,6 +73,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Ajustes para telas pequenas */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+      input, button {
+        font-size: 1rem;
+        padding: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -89,7 +104,6 @@
       const resultadoDiv = document.getElementById("resultado");
       resultadoDiv.textContent = `Resultado: ${soma}`;
 
-      // Reinicia a animação
       resultadoDiv.classList.remove("show");
       void resultadoDiv.offsetWidth; // Força reflow
       resultadoDiv.classList.add("show");
