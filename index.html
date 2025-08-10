@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Test Website</title>
+  <title>Somador de Números</title>
 </head>
 <body>
-  <h1>To Test Website</h1>
-  <p>GitHub Pages New Website</p>
+  <h1>Somar Dois Números</h1>
+
+  <label>Primeiro número: </label>
+  <input type="number" id="num1"><br><br>
+
+  <label>Segundo número: </label>
+  <input type="number" id="num2"><br><br>
+
+  <button onclick="somar()">Somar</button>
+
+  <h2 id="resultado"></h2>
+
+  <script>
+    function somar() {
+      const n1 = parseFloat(document.getElementById("num1").value) || 0;
+      const n2 = parseFloat(document.getElementById("num2").value) || 0;
+      const soma = n1 + n2;
+      document.getElementById("resultado").innerText = "Resultado: " + soma;
+    }
+  </script>
 </body>
 </html>
