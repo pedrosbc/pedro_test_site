@@ -3,26 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <title>Somador de Números</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.6rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 1rem;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resultado {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+  </style>
 </head>
 <body>
-  <h1>Somar Dois Números</h1>
-
-  <label>Primeiro número: </label>
-  <input type="number" id="num1"><br><br>
-
-  <label>Segundo número: </label>
-  <input type="number" id="num2"><br><br>
-
-  <button onclick="somar()">Somar</button>
-
-  <h2 id="resultado"></h2>
+  <div class="container">
+    <h1>Somar Dois Números</h1>
+    <input type="number" id="num1" placeholder="Primeiro número">
+    <input type="number" id="num2" placeholder="Segundo número">
+    <button onclick="somar()">Somar</button>
+    <div id="resultado"></div>
+  </div>
 
   <script>
     function somar() {
       const n1 = parseFloat(document.getElementById("num1").value) || 0;
       const n2 = parseFloat(document.getElementById("num2").value) || 0;
       const soma = n1 + n2;
-      document.getElementById("resultado").innerText = "Resultado: " + soma;
+      document.getElementById("resultado").innerText = `Resultado: ${soma}`;
     }
   </script>
 </body>
